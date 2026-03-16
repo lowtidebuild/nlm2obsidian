@@ -21,23 +21,23 @@
 `nlm2obsidian`은 NotebookLM에 있는 모든 콘텐츠를 가져와서 **Zettelkasten + PARA** 구조에 맞게 Obsidian 볼트에 정리해주는 CLI 도구입니다.
 
 ```
-NotebookLM                          Obsidian 볼트
-┌──────────────┐                    ┌──────────────────────────────────────┐
-│  소스         │ ──── Literature ──▶│ 5. Zettelkasten/10. Literature/     │
-│  리포트       │ ──── Literature ──▶│     NotebookLM/{노트북}/             │
-│              │                    │                                      │
-│  퀴즈         │ ──── Resource ────▶│ 3. Resources/NotebookLM/{노트북}/    │
+NotebookLM                            Obsidian Vault
+┌────────────────┐                    ┌──────────────────────────────────────┐
+│  소스          │ ──── Literature ──▶│ 5. Zettelkasten/10. Literature/      │
+│  리포트        │ ──── Literature ──▶│     NotebookLM/{notebook}/           │
+│                │                    │                                      │
+│  퀴즈          │ ──── Resource ────▶│ 3. Resources/NotebookLM/{notebook}/  │
 │  플래시카드    │ ──── Resource ────▶│                                      │
-│  마인드맵     │ ──── Resource ────▶│                                      │
-│  미디어 링크  │ ──── Resource ────▶│                                      │
-│              │                    │                                      │
-│  오디오/영상  │ ──── 바이너리 ────▶│ 7. Attachments/NotebookLM/           │
-│  인포그래픽   │ ──── 바이너리 ────▶│                                      │
-│  슬라이드     │ ──── 바이너리 ────▶│                                      │
-│              │                    │                                      │
-│  사용자 메모  │ ──── Inbox ───────▶│ 5. Zettelkasten/00. Inbox/           │
-│  채팅 기록   │ ──── Inbox ───────▶│     NotebookLM/{노트북}/             │
-└──────────────┘                    └──────────────────────────────────────┘
+│  마인드맵      │ ──── Resource ────▶│                                      │
+│  미디어 링크   │ ──── Resource ────▶│                                      │
+│                │                    │                                      │
+│  오디오/영상   │ ──── Binary ──────▶│ 7. Attachments/NotebookLM/{notebook}/│
+│  인포그래픽    │ ──── Binary ──────▶│                                      │
+│  슬라이드      │ ──── Binary ──────▶│                                      │
+│                │                    │                                      │
+│  사용자 메모   │ ──── Inbox ───────▶│ 5. Zettelkasten/00. Inbox/           │
+│  채팅 기록     │ ──── Inbox ───────▶│     NotebookLM/{notebook}/           │
+└────────────────┘                    └──────────────────────────────────────┘
 ```
 
 ### 주요 기능
