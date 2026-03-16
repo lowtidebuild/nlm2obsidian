@@ -27,6 +27,9 @@ storage_state.json
 # nlm2obsidian sync state (lives in vault, not here — but just in case)
 .notebooklm-sync.json
 
+# Design docs (internal only)
+nlm2obsidian-design-spec.md
+
 # Secrets / credentials
 *.key
 *.pem
