@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nlm2obsidian"
+version = "0.1.0"
+description = "Import NotebookLM content into an Obsidian vault"
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.0",
+    "notebooklm-py>=0.1.1",
+]
+
+[project.scripts]
+nlm2obsidian = "nlm2obsidian.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

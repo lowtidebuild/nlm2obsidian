@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# notebooklm-py auth (cookies & session)
+.notebooklm/
+storage_state.json
+
+# nlm2obsidian sync state (lives in vault, not here — but just in case)
+.notebooklm-sync.json
+
+# Secrets / credentials
+*.key
+*.pem
+.env
+.env.*
