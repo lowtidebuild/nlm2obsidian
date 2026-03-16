@@ -20,22 +20,17 @@
 
 `nlm2obsidian`은 NotebookLM에 있는 모든 콘텐츠를 가져와서 **Zettelkasten + PARA** 구조에 맞게 Obsidian 볼트에 정리해주는 CLI 도구입니다.
 
-| NotebookLM | | Obsidian Vault |
-|:---|:---:|:---|
-| **소스** | → Literature → | `5. Zettelkasten/10. Literature/NotebookLM/{notebook}/` |
-| **리포트** | → Literature → | ↑ |
-| | | |
-| **퀴즈** | → Resource → | `3. Resources/NotebookLM/{notebook}/` |
-| **플래시카드** | → Resource → | ↑ |
-| **마인드맵** | → Resource → | ↑ |
-| **미디어 링크** | → Resource → | ↑ |
-| | | |
-| **오디오 / 영상** | → Binary → | `7. Attachments/NotebookLM/{notebook}/` |
-| **인포그래픽** | → Binary → | ↑ |
-| **슬라이드** | → Binary → | ↑ |
-| | | |
-| **사용자 메모** | → Inbox → | `5. Zettelkasten/00. Inbox/NotebookLM/{notebook}/` |
-| **채팅 기록** | → Inbox → | ↑ |
+> 📚 **Literature** `5. Zettelkasten/10. Literature/NotebookLM/{notebook}/`
+> 소스 · 리포트
+>
+> 📋 **Resource** `3. Resources/NotebookLM/{notebook}/`
+> 퀴즈 · 플래시카드 · 마인드맵 · 미디어 링크
+>
+> 📎 **Binary** `7. Attachments/NotebookLM/{notebook}/`
+> 오디오 · 영상 · 인포그래픽 · 슬라이드
+>
+> 📥 **Inbox** `5. Zettelkasten/00. Inbox/NotebookLM/{notebook}/`
+> 사용자 메모 · 채팅 기록
 
 ### 주요 기능
 
