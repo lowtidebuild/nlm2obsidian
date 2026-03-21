@@ -20,24 +20,40 @@
 
 `nlm2obsidian` is a CLI tool that pulls everything from your NotebookLM notebooks and organizes it into your Obsidian vault using **Zettelkasten + PARA** conventions.
 
-```
-NotebookLM                          Obsidian Vault
-┌──────────────┐                    ┌──────────────────────────────────────┐
-│  Sources     │ ──── Literature ──▶│ 5. Zettelkasten/10. Literature/     │
-│  Reports     │ ──── Literature ──▶│     NotebookLM/{notebook}/          │
-│              │                    │                                      │
-│  Quizzes     │ ──── Resource ────▶│ 3. Resources/NotebookLM/{notebook}/ │
-│  Flashcards  │ ──── Resource ────▶│                                      │
-│  Mind maps   │ ──── Resource ────▶│                                      │
-│  Media links │ ──── Resource ────▶│                                      │
-│              │                    │                                      │
-│  Audio/Video │ ──── Binary ──────▶│ 7. Attachments/NotebookLM/          │
-│  Infographic │ ──── Binary ──────▶│                                      │
-│  Slide decks │ ──── Binary ──────▶│                                      │
-│              │                    │                                      │
-│  User notes  │ ──── Inbox ───────▶│ 5. Zettelkasten/00. Inbox/          │
-│  Chat history│ ──── Inbox ───────▶│     NotebookLM/{notebook}/          │
-└──────────────┘                    └──────────────────────────────────────┘
+```mermaid
+graph LR
+    subgraph NLM [" NotebookLM "]
+        direction TB
+        S["Sources · Reports"]
+        R["Quizzes · Flashcards<br/>Mind maps · Media links"]
+        B["Audio/Video · Infographic<br/>Slide decks"]
+        N["User notes · Chat history"]
+    end
+
+    S -->|Literature| LIT
+    R -->|Resource| RES
+    B -->|Binary| BIN
+    N -->|Inbox| INB
+
+    subgraph OBS [" Obsidian Vault "]
+        direction TB
+        LIT["5. Zettelkasten/10. Literature/<br/>NotebookLM/{notebook}/"]
+        RES["3. Resources/<br/>NotebookLM/{notebook}/"]
+        BIN["7. Attachments/<br/>NotebookLM/"]
+        INB["5. Zettelkasten/00. Inbox/<br/>NotebookLM/{notebook}/"]
+    end
+
+    classDef src fill:#fef3c7,stroke:#f59e0b,stroke-width:1.5px,color:#92400e
+    classDef lit fill:#ede9fe,stroke:#7c3aed,stroke-width:1.5px,color:#5b21b6
+    classDef res fill:#d1fae5,stroke:#10b981,stroke-width:1.5px,color:#065f46
+    classDef bin fill:#fee2e2,stroke:#ef4444,stroke-width:1.5px,color:#991b1b
+    classDef inb fill:#dbeafe,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af
+
+    class S,R,B,N src
+    class LIT lit
+    class RES res
+    class BIN bin
+    class INB inb
 ```
 
 ### Key Features

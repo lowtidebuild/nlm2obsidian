@@ -20,17 +20,41 @@
 
 `nlm2obsidian`은 NotebookLM에 있는 모든 콘텐츠를 가져와서 **Zettelkasten + PARA** 구조에 맞게 Obsidian 볼트에 정리해주는 CLI 도구입니다.
 
-> 📚 **Literature** `5. Zettelkasten/10. Literature/NotebookLM/{notebook}/`
-> 소스 · 리포트
->
-> 📋 **Resource** `3. Resources/NotebookLM/{notebook}/`
-> 퀴즈 · 플래시카드 · 마인드맵 · 미디어 링크
->
-> 📎 **Binary** `7. Attachments/NotebookLM/{notebook}/`
-> 오디오 · 영상 · 인포그래픽 · 슬라이드
->
-> 📥 **Inbox** `5. Zettelkasten/00. Inbox/NotebookLM/{notebook}/`
-> 사용자 메모 · 채팅 기록
+```mermaid
+graph LR
+    subgraph NLM [" NotebookLM "]
+        direction TB
+        S["소스 · 리포트"]
+        R["퀴즈 · 플래시카드<br/>마인드맵 · 미디어 링크"]
+        B["오디오/영상 · 인포그래픽<br/>슬라이드"]
+        N["사용자 메모 · 채팅 기록"]
+    end
+
+    S -->|Literature| LIT
+    R -->|Resource| RES
+    B -->|Binary| BIN
+    N -->|Inbox| INB
+
+    subgraph OBS [" Obsidian Vault "]
+        direction TB
+        LIT["5. Zettelkasten/10. Literature/<br/>NotebookLM/{notebook}/"]
+        RES["3. Resources/<br/>NotebookLM/{notebook}/"]
+        BIN["7. Attachments/<br/>NotebookLM/"]
+        INB["5. Zettelkasten/00. Inbox/<br/>NotebookLM/{notebook}/"]
+    end
+
+    classDef src fill:#fef3c7,stroke:#f59e0b,stroke-width:1.5px,color:#92400e
+    classDef lit fill:#ede9fe,stroke:#7c3aed,stroke-width:1.5px,color:#5b21b6
+    classDef res fill:#d1fae5,stroke:#10b981,stroke-width:1.5px,color:#065f46
+    classDef bin fill:#fee2e2,stroke:#ef4444,stroke-width:1.5px,color:#991b1b
+    classDef inb fill:#dbeafe,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af
+
+    class S,R,B,N src
+    class LIT lit
+    class RES res
+    class BIN bin
+    class INB inb
+```
 
 ### 주요 기능
 
